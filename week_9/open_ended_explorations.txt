@@ -1,0 +1,96 @@
+PHYS 3510 — Spring 2026 — Open-Ended Exploration Suggestions
+==================================================
+One set of suggestions per exam group topic.
+
+==================================================
+GROUP A — Orbital Mechanics
+==================================================
+
+1. Three-body figure-eight
+   The famous stable three-body solution has all three masses chasing each
+   other in a figure-eight. Try to reproduce it by finding the right initial
+   conditions and see how sensitive it is to perturbations.
+
+2. Hohmann transfer orbit
+   Simulate a spacecraft transferring from a low circular orbit to a higher
+   one using two impulsive burns. How does the delta-v cost scale with the
+   ratio of the orbit radii?
+
+3. Precessing orbits (GR correction)
+   Add a small 1/r^3 correction to Newtonian gravity (a crude GR
+   approximation) and watch the ellipse precess. Compare the precession rate
+   to Mercury's observed 43 arcseconds per century.
+
+4. Lagrange points
+   In a rotating two-body (Earth-Sun) frame, find the five Lagrange points
+   numerically by mapping out the effective potential. Which ones are stable?
+
+==================================================
+GROUP B — Damped Driven Oscillator
+==================================================
+
+1. Poincare sections
+   At the driving frequency, sample position and velocity once per period and
+   plot the resulting point cloud. How does the section change as you sweep
+   the driving amplitude from the linear into the chaotic regime?
+
+2. Bifurcation diagram
+   Plot the steady-state amplitude as a function of driving frequency or
+   amplitude and look for period-doubling cascades leading to chaos.
+
+3. Energy budget
+   Track the power injected by the driving force and the power dissipated by
+   damping over one cycle. Do they balance in steady state? What happens
+   during the transient?
+
+4. Resonance width vs. damping
+   For different damping coefficients, measure the width of the resonance peak
+   (FWHM) and check whether it follows the theoretical prediction Q = w0/Dw.
+
+==================================================
+GROUP C — Lorenz System
+==================================================
+
+1. Lorenz map
+   After a long simulation, extract the successive local maxima of Z and plot
+   Z_(n+1) vs. Z_n. You should get a nearly one-dimensional tent map —
+   explore what this implies about predictability.
+
+2. Fractal dimension
+   Use the box-counting method on the attractor to estimate its fractal
+   (Hausdorff) dimension. How does it compare to the known value of ~2.06?
+
+3. Parameter space exploration
+   Hold sigma and beta fixed at the classic values but sweep rho continuously.
+   Map out which values give fixed points, limit cycles, and strange
+   attractors. Where exactly does the transition to chaos happen?
+
+4. Coexisting attractors
+   For some parameter values (e.g. rho near 13), the Lorenz system has two
+   stable fixed points and a strange attractor simultaneously. Can you find
+   initial conditions that lead to each? What determines which basin of
+   attraction a trajectory falls into?
+
+==================================================
+GROUP D — SIR Epidemic Model
+==================================================
+
+1. SEIR extension
+   Add an Exposed (latent) compartment between S and I. How does the
+   incubation period change the shape and timing of the epidemic peak?
+
+2. Vaccination threshold
+   Introduce vaccination by removing a fraction of susceptibles at t=0. Find
+   the critical vaccination fraction needed to prevent an outbreak and compare
+   it to the theoretical herd immunity threshold 1 - 1/R0.
+
+3. Stochastic SIR
+   Implement a stochastic version where infections and recoveries are
+   Poisson-distributed random events. For a fixed R0, how does the variance
+   in peak infection size scale with population N? What happens for very
+   small N?
+
+4. Network spreading
+   Instead of a well-mixed population, put individuals on a network (e.g. a
+   random graph or a scale-free graph) and spread the disease along edges.
+   How do network topology and degree distribution change the effective R0?
